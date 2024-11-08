@@ -69,7 +69,7 @@ const Efficiency = () => {
               <TableRow key={res?.bus_id} className="border-b border-gray-200">
                 <TableCell className="px-6 py-4">
                   <div>
-                    <div className="font-bold">ID: {res?.bus_id.to}</div>
+                    <div className="font-bold">ID: {res?.bus_id}</div>
                     <div className="text-sm text-gray-500">
                       Trips: {res?.cnt < 1 ? 0 : res?.cnt}
                     </div>
