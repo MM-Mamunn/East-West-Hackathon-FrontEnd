@@ -7,6 +7,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -45,6 +46,7 @@ function Trip_all() {
         console.log(error);
       });
   }, []);
+
   const handleTripInsert = async () => {
     try {
       const tripData = {
@@ -233,12 +235,15 @@ function Trip_all() {
               </div>
 
               <DialogFooter>
-                <Button
-                  type="submit"
-                  className="text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out"
-                >
-                  Insert
-                </Button>
+                <DialogClose>
+                  <Button
+                    type="submit"
+                    onClick={handleTripInsert}
+                    className="text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out"
+                  >
+                    Insert
+                  </Button>
+                </DialogClose>
               </DialogFooter>
             </DialogContent>
           </Dialog>

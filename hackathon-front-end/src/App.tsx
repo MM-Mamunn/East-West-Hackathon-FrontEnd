@@ -4,6 +4,7 @@ import Home from "./componenets/Home/Home";
 import Driver from "./componenets/Driver/Driver";
 import Bus_view from "./componenets/Bus/Bus";
 import Trip_all from "./componenets/Trip/Trip";
+import Distance from "./componenets/Distance/Distance";
 const App = () => {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ const App = () => {
           <Route path="/driver_view" element={<Driver />} />
           <Route path="/bus_view" element={<Bus_view />} />
           <Route path="/trip_view" element={<Trip_all />} />
+          <Route path="/total_distance" element={<Distance />} />
         </Route>
       </Routes>
     </BrowserRouter>

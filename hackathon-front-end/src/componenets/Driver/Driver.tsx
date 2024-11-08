@@ -7,12 +7,6 @@ import { Label } from "@/components/ui/label";
 // import { IoMdAddCircle } from "react-icons/io";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import {
@@ -87,75 +81,6 @@ function DriverView() {
         </div>
 
         <div className="flex flex-col w-full lg:w-auto space-y-4 lg:space-y-0 lg:flex-row justify-around items-center gap-x-2">
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="flex items-center w-full space-x-2 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out ">
-                Total Distance
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[500px] bg-gray-50 p-6 rounded-lg shadow-lg">
-              <DialogHeader>
-                <DialogTitle className="text-xl font-semibold text-gray-800">
-                  Check Total Distance
-                </DialogTitle>
-              </DialogHeader>
-              <div className="grid gap-6 py-6">
-                <div className="flex justify-center w-full h-full items-center gap-4">
-                  <Label
-                    htmlFor="driverId"
-                    className="w-1/3 text-right font-medium text-gray-700"
-                  >
-                    Driver ID
-                  </Label>
-                  <Input
-                    id="driverId"
-                    placeholder="Enter Driver ID"
-                    className="w-full"
-                  />
-                </div>
-                <div className="flex items-center gap-4">
-                  <Label
-                    htmlFor="startDate"
-                    className="w-1/3 text-right font-medium text-gray-700"
-                  >
-                    Start Date
-                  </Label>
-                  <div className="relative w-full">
-                    <DatePicker
-                      id="startDate"
-                      dateFormat="MM-dd-yyyy"
-                      placeholderText="   Select a start date"
-                      showIcon
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Label
-                    htmlFor="endDate"
-                    className="w-1/3 text-right font-medium text-gray-700"
-                  >
-                    End Date
-                  </Label>
-                  <div className="relative w-full">
-                    <DatePicker
-                      id="endDate"
-                      dateFormat="MM-dd-yyyy"
-                      placeholderText="   Select a end date"
-                      showIcon
-                    />
-                  </div>
-                </div>
-              </div>
-              <DialogFooter>
-                <Button
-                  type="submit"
-                  className="text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out"
-                >
-                  Submit
-                </Button>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
           <Dialog>
             <DialogTrigger asChild>
               <Button className="flex items-center w-full space-x-2 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out ">

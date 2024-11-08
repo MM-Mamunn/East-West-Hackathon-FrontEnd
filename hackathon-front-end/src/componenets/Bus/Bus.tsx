@@ -63,98 +63,105 @@ function Bus_view() {
             <FaSearch className="text-lg" />
           </Button>
         </div>
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button className="flex items-center w-full md:w-fit space-x-2 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out ">
-              {/* <IoMdAddCircle className="mr-2 text-xl" /> */}
-              Insert New Driver
+        <div className="flex flex-col w-full lg:w-auto space-y-4 lg:space-y-0 lg:flex-row justify-around items-center gap-x-2">
+          <Link to="/total_distance">
+            <Button className="flex items-center w-full space-x-2 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out">
+              Total Distance
             </Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[500px] bg-gray-50 p-6 rounded-lg shadow-lg">
-            <DialogHeader>
-              <DialogTitle className="text-xl font-semibold text-gray-800">
+          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="flex items-center w-full md:w-fit space-x-2 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out ">
+                {/* <IoMdAddCircle className="mr-2 text-xl" /> */}
                 Insert New Driver
-              </DialogTitle>
-              <DialogDescription className="text-sm text-gray-500">
-                Fill out the details for the new driver. Click save to insert
-                it.
-              </DialogDescription>
-            </DialogHeader>
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[500px] bg-gray-50 p-6 rounded-lg shadow-lg">
+              <DialogHeader>
+                <DialogTitle className="text-xl font-semibold text-gray-800">
+                  Insert New Driver
+                </DialogTitle>
+                <DialogDescription className="text-sm text-gray-500">
+                  Fill out the details for the new driver. Click save to insert
+                  it.
+                </DialogDescription>
+              </DialogHeader>
 
-            <div className="grid gap-6 py-6">
-              {/* Driver ID Field */}
-              <div className="flex justify-center w-full h-full items-center gap-4">
-                <Label
-                  htmlFor="driverId"
-                  className="w-1/3 text-right font-medium text-gray-700"
-                >
-                  Driver ID
-                </Label>
-                <Input
-                  id="driverId"
-                  placeholder="Enter Driver ID"
-                  className="w-full"
-                />
+              <div className="grid gap-6 py-6">
+                {/* Driver ID Field */}
+                <div className="flex justify-center w-full h-full items-center gap-4">
+                  <Label
+                    htmlFor="driverId"
+                    className="w-1/3 text-right font-medium text-gray-700"
+                  >
+                    Driver ID
+                  </Label>
+                  <Input
+                    id="driverId"
+                    placeholder="Enter Driver ID"
+                    className="w-full"
+                  />
+                </div>
+
+                {/* Bus ID Field */}
+                <div className="flex items-center gap-4">
+                  <Label
+                    htmlFor="busId"
+                    className="w-1/3 text-right font-medium text-gray-700"
+                  >
+                    Name
+                  </Label>
+                  <Input
+                    id="name"
+                    placeholder="Enter Driver Name"
+                    className="w-full"
+                  />
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <Label
+                    htmlFor="age"
+                    className="w-1/3 text-right font-medium text-gray-700"
+                  >
+                    Age
+                  </Label>
+                  <Input
+                    type="number"
+                    id="age"
+                    placeholder="Enter Driver Age"
+                    className="w-full"
+                  />
+                </div>
+
+                {/* Route Field */}
+                <div className="flex items-center gap-4">
+                  <Label
+                    htmlFor="licenseNo"
+                    className="w-1/3 text-right font-medium text-gray-700"
+                  >
+                    License No
+                  </Label>
+                  <Input
+                    id="licenseNo"
+                    placeholder="Enter Lisence No"
+                    className="w-full"
+                  />
+                </div>
               </div>
 
-              {/* Bus ID Field */}
-              <div className="flex items-center gap-4">
-                <Label
-                  htmlFor="busId"
-                  className="w-1/3 text-right font-medium text-gray-700"
-                >
-                  Name
-                </Label>
-                <Input
-                  id="name"
-                  placeholder="Enter Driver Name"
-                  className="w-full"
-                />
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Label
-                  htmlFor="age"
-                  className="w-1/3 text-right font-medium text-gray-700"
-                >
-                  Age
-                </Label>
-                <Input
-                  type="number"
-                  id="age"
-                  placeholder="Enter Driver Age"
-                  className="w-full"
-                />
-              </div>
-
-              {/* Route Field */}
-              <div className="flex items-center gap-4">
-                <Label
-                  htmlFor="licenseNo"
-                  className="w-1/3 text-right font-medium text-gray-700"
-                >
-                  License No
-                </Label>
-                <Input
-                  id="licenseNo"
-                  placeholder="Enter Lisence No"
-                  className="w-full"
-                />
-              </div>
-            </div>
-
-            <DialogFooter>
-              <DialogClose asChild>
-                <Button
-                  type="submit"
-                  className="text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out"
-                >
-                  Insert
-                </Button>
-              </DialogClose>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button
+                    type="submit"
+                    className="text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 ease-in-out"
+                  >
+                    Insert
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
 
       {/* Drivers List */}
