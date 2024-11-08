@@ -37,18 +37,19 @@ const Distance = () => {
   };
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [distance, setDistance] = useState([]);
   const calculateDistance = async () => {
-    console.log(convertDate(String(startDate)));
-    console.log(convertDate(String(endDate)));
-    const { data } = await axios.get(
-      `http://127.0.0.1:8000/api/total_distance?date1=${convertDate(
-        String(startDate)
-      )}&date2=${convertDate(String(startDate))}`
+    const dateData = {
+      date1: convertDate(String(startDate)),
+      date2: convertDate(String(endDate)),
+    };
+    const { data } = await axios.post(
+      `http://127.0.0.1:8000/api/total_distance2`,
+      dateData
     );
-    console.log(data);
+    setDistance(data?.date?.users);
   };
-  const [result, setResult] = useState([]);
-  if (result.length === 0) {
+  if (distance.length === 0) {
     return (
       <div className="p-6 h-screen">
         <div className="flex items-center justify-center gap-x-10 w-full space-x-3">
@@ -99,8 +100,8 @@ const Distance = () => {
     );
   }
   return (
-    <div className="p-6">
-      <div className="flex items-center w-full space-x-3">
+    <div className="p-6 h-screen">
+      <div className="flex items-center justify-center gap-x-10 w-full space-x-3">
         <div className="flex items-center gap-4">
           <Label
             htmlFor="startDate"
@@ -112,6 +113,7 @@ const Distance = () => {
             <DatePicker
               id="startDate"
               selected={startDate}
+              className="border-2 border-black"
               onChange={(date) => setStartDate(date)}
               dateFormat="MM-dd-yyyy"
               placeholderText="   Select a starting date"
@@ -129,6 +131,7 @@ const Distance = () => {
           <div className="relative w-full">
             <DatePicker
               id="date"
+              className="border-2 border-black"
               selected={endDate}
               onChange={(date) => setEndDate(date)}
               dateFormat="MM-dd-yyyy"
@@ -137,17 +140,24 @@ const Distance = () => {
             />
           </div>
         </div>
+        <Button onClick={calculateDistance}>Check Total Distance</Button>
       </div>
       <div className="overflow-x-auto">
-        <Table className="min-w-full bg-white shadow-md rounded-lg">
+        <Table className="min-w-full mt-10 bg-white showdow-md rounded-lg">
           <TableHeader>
             <TableRow className="bg-gray-100 text-gray-700">
               <TableHead className="px-6 py-4">Bus Id</TableHead>
-
               <TableHead className="px-6 py-4">Total Distance</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody></TableBody>
+          <TableBody>
+            {distance?.map((res) => (
+              <TableRow key={res?.bus_id} className="border-b border-gray-200">
+                <TableCell className="px-6 py-4">{res?.bus_id}</TableCell>
+                <TableCell className="px-6 py-4">{res?.total_dis} km</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
         </Table>
       </div>
     </div>
