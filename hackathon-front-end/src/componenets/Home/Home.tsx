@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div className="h-screen">
       <div className="h-[300px]">
-        <div className="w-full h-[50px] text-xl pl-20">
+        <div className="w-full h-[50px] text-center text-lg pl-20">
           Bus VS Oil Consume and Distance Traveled
         </div>
         <ResponsiveContainer width="100%" height="100%">

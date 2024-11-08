@@ -33,7 +33,7 @@ const Sidebar = () => {
         <div className="uppercase pl-5">Bus</div>
       </Link>
       <Link
-        to="/bus_view"
+        to="/trip_view"
         className="flex justify-start text-xl hover:opacity-80 cursor-pointer items-center my-5"
       >
         <FaRoad />
