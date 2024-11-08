@@ -6,6 +6,7 @@ import { CgProfile } from "react-icons/cg";
 import { IoSettings } from "react-icons/io5";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { FaRoad } from "react-icons/fa";
+import { FaBook } from "react-icons/fa6";
 const Sidebar = () => {
   return (
     <div className="fixed h-screen w-[300px] pl-10 pt-10 left-0 bg-black text-white">
@@ -38,6 +39,13 @@ const Sidebar = () => {
       >
         <FaRoad />
         <div className="uppercase pl-5">Trip</div>
+      </Link>
+      <Link
+        to="/efficiency"
+        className="flex justify-start text-xl hover:opacity-80 cursor-pointer items-center my-5"
+      >
+        <FaBook />
+        <div className="uppercase pl-5">Efficiency</div>
       </Link>
       <div className="text-sm">Personal</div>
       <Link
